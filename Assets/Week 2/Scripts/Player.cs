@@ -22,4 +22,9 @@ public class Player : MonoBehaviour
     {
         rigidbody.AddForce(direction * force * Time.deltaTime);
     }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Debug.Log("Player hit by "+ collision.gameObject);
+    }
 }
