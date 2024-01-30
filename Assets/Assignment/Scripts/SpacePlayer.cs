@@ -6,7 +6,7 @@ public class SpacePlayer : MonoBehaviour
 {
 
     public float speed = 2.5f;
-    public GameObject lazer;
+    public GameObject lazerPrefab;
     public Transform lazerSpawn;
 
     // Update is called once per frame
@@ -16,7 +16,7 @@ public class SpacePlayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-
+            Instantiate(lazerPrefab, lazerSpawn.position, lazerSpawn.rotation);
         }
     }
 }
