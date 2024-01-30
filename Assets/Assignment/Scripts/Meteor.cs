@@ -4,19 +4,21 @@ using UnityEngine;
 
 public class Meteor : MonoBehaviour
 {
-    public float speed = -0.5f;
+    public float speed = 1000.0f;
     public Rigidbody2D body;
+    Vector2 direction;
 
     void Start()
     {
-        Vector2 boost = transform.right;
-        body.AddForce(-boost * Time.deltaTime * 20);
+        direction.x = 25;
+        direction.y = 0;
+        
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-        transform.Translate(speed * Time.deltaTime, 0, 0);
+        body.AddForce(direction * speed * Time.deltaTime);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

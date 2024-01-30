@@ -7,9 +7,9 @@ public class LoseWall : MonoBehaviour
 {
     public GameObject loseText;
 
-    Boolean Lose = false;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Lose = true;
+        loseText.SetActive(true);
     }
 }
